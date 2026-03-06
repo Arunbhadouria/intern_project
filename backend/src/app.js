@@ -49,19 +49,23 @@ const swaggerOptions = {
                     bearerFormat: 'JWT'
                 }
             }
-        },
-        security: [{ bearerAuth: [] }]
+        }
     },
-    apis: [
-        path.join(__dirname, './src/routes/*.js'),
-        path.join(__dirname, './routes/*.js'),
-        path.join(__dirname, './src/routes/**/*.js')
-    ]
+    apis: [path.join(__dirname, 'routes', '*.js')]
 };
 
-const swaggerDocs = swaggerJsdoc(swaggerOptions);
-app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+// ADD THESE DEBUG LINES
+console.log('🔍 __dirname is:', __dirname);
+console.log('🔍 Looking for routes at:', path.join(__dirname, 'routes', '*.js'));
+console.log('🔍 Files in routes folder:', require('fs').readdirSync(path.join(__dirname, 'routes')));
 
+const swaggerDocs = swaggerJsdoc(swaggerOptions);
+
+console.log('📚 Swagger spec:', JSON.stringify(swaggerDocs, null, 2));
+console.log('📚 Number of paths found:', Object.keys(swaggerDocs.paths || {}).length);
+console.log('📋 Path names:', Object.keys(swaggerDocs.paths || {}));
+
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 // Error Handler Middleware
 app.use(errorHandler);
 
