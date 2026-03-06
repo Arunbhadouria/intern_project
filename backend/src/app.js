@@ -30,9 +30,10 @@ app.use('/api/v1/tasks', require('./routes/taskRoutes'));
 // Swagger UI
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
+const path = require('path');
 
 const swaggerOptions = {
-    swaggerDefinition: {
+    definition: {
         openapi: '3.0.0',
         info: {
             title: 'Task Management API',
@@ -51,7 +52,11 @@ const swaggerOptions = {
         },
         security: [{ bearerAuth: [] }]
     },
-    apis: ['./src/routes/*.js']
+    apis: [
+        path.join(__dirname, './src/routes/*.js'),
+        path.join(__dirname, './routes/*.js'),
+        path.join(__dirname, './src/routes/**/*.js')
+    ]
 };
 
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
