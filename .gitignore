@@ -1,0 +1,211 @@
+# ============================================
+# ROOT .gitignore - Full Stack Project
+# ============================================
+
+# ==================== CRITICAL - ENVIRONMENT VARIABLES ====================
+# NEVER commit these files - they contain secrets!
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+*.env
+!.env.example
+
+# ==================== DEPENDENCIES ====================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+.npm
+.yarn-integrity
+/.pnp
+.pnp.js
+
+# ==================== BUILD OUTPUTS ====================
+dist/
+build/
+backend/dist/
+backend/build/
+frontend/build/
+frontend/dist/
+*.tgz
+out/
+
+# ==================== LOGS ====================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+lerna-debug.log*
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# ==================== TESTING & COVERAGE ====================
+coverage/
+*.lcov
+.nyc_output/
+/coverage
+.cache/
+lib-cov
+
+# ==================== DATABASE FILES ====================
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+.dynamodb/
+
+# ==================== OS SPECIFIC FILES ====================
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ==================== IDE & EDITORS ====================
+# VSCode
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.history/
+*.code-workspace
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+.idea_modules/
+out/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~.nib
+*.un~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+
+# Eclipse
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+.metadata
+
+# ==================== TEMPORARY FILES ====================
+*.tmp
+*.temp
+*.bak
+*.backup
+.cache
+tmp/
+temp/
+
+# ==================== DOCKER ====================
+docker-compose.override.yml
+*.log
+
+# ==================== FRONTEND SPECIFIC ====================
+# React / Next.js
+.next/
+.nuxt/
+.vuepress/dist
+.cache/
+
+# Parcel
+.parcel-cache/
+
+# Gatsby
+.cache/
+public/
+
+# ==================== BACKEND SPECIFIC ====================
+# Runtime data
+*.pid.lock
+
+# Diagnostic reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# ==================== OPTIONAL FILES ====================
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# TernJS port file
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# ==================== PACKAGE MANAGER LOCKS (Optional) ====================
+# Uncomment if you want to ignore lock files
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
